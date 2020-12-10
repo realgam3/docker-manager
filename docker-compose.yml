@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+  challenge:
+    build: challenge/
+    ports:
+      - "2222:22"
+    depends_on:
+      - api
+    volumes:
+      - "docker-sock:/app/socket:ro"
+    read_only: true
+    restart: always
+
+  api:
+    build: api/
+    volumes:
+       - "./api/public:/app/public"
+       - "docker-sock:/app/socket"
+    restart: always
+
+volumes:
+  docker-sock:

@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  challenge:
+    build: .
+    ports:
+      - "2222:22"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    read_only: true
+    restart: always
+

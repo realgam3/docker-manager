@@ -1,0 +1,7 @@
+# Docker Files
+Dockerfile
+.dockerignore
+
+# Docker API Creation Script
+docker-manager
+dump_docker.py
